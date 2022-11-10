@@ -1,6 +1,8 @@
 $(function () {
     initTimeBlocks();
 
+    var saveNotification = $("#savedNotification");
+
     /*///////////////FUNCTION DEFINITIONS//////////////////////////////*/
 
     function initTimeBlocks() {
@@ -19,6 +21,7 @@ $(function () {
         var todo = btnClicked.parent().children("textarea").val();
         console.log(todo);
         localStorage.setItem(btnClicked.parent().attr("id"), todo);
+        saveNotification.html("Apointment Saved to <span class ='text-danger'>localStorage ✔️</span>");
     }
 
     function applyTimeStyles() {
